@@ -1,10 +1,10 @@
 export const firebaseconfig = {
-    apiKey: 'AIzaSyBUQpbFZhJAE7jczYx4im8QBlqbtlKknLE',
-      authDomain: 'delivery-luke.firebaseapp.com',
-      databaseURL: 'https://delivery-luke.firebaseio.com',
-      projectId: 'delivery-luke',
-      storageBucket: 'delivery-luke.appspot.com',
-      messagingSenderId: '673055230202',
-      appId: '1:673055230202:web:66b90e7ee66f8933'
+  apiKey: "AIzaSyCHkA9d7Y4UBNCYZkeMRVHIQf4hSrO07nQ",
+  authDomain: "emanga-d5e9f.firebaseapp.com",
+  databaseURL: "https://emanga-d5e9f.firebaseio.com",
+  projectId: "emanga-d5e9f",
+  storageBucket: "emanga-d5e9f.appspot.com",
+  messagingSenderId: "311511927165",
+  appId: "1:311511927165:web:15553c7f8c234b8c8f2414"
 
   };

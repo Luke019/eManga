@@ -1,9 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>perfil</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-avatar>
+    <i class="fas fa-user-circle"></i>
+  </ion-avatar>
+  <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar">
+
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ user.name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ user.email }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-item (click)="updatePicture()">Update Picture</ion-item> -->
+  <ion-button expand="block"  fill="outline" color="danger" [routerLink]="['/usuarios/enderecos']">Meus Endereços</ion-button> 
+  <ion-button expand="block" color="dark" (click)="sair()">Sair</ion-button> 
 
 </ion-content>

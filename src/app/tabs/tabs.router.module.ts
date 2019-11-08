@@ -17,16 +17,6 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
-          }
-        ]
-      },
-      {
         path: 'perfil',
         children: [
           {
@@ -73,6 +63,15 @@ const routes: Routes = [
       {
         path: 'forma-pagamento',
         loadChildren: '../pedidos/forma-pagamento/forma-pagamento.module#FormaPagamentoPageModule'
+      }
+    ]
+  },
+  {
+    path: 'produto',
+    children: [
+      {
+        path: 'detalhes-produtos/',
+        loadChildren: '../produtos/detalhes-produtos/detalhes-produtos.module#DetalhesProdutosPageModule'
       }
     ]
   },

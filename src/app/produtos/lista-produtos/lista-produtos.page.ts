@@ -35,4 +35,9 @@ export class ListaProdutosPage implements OnInit {
     this.router.navigate(['pedido/carrinho/novo-item/', produtoKey]);
   }
 
+  mostrarDetalhes() {
+    // console.log('Acontece algo');
+    this.router.navigate(['produto/detalhes-pedidos']);
+  }
+
 }

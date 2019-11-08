@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'criar-conta', loadChildren: './usuarios/criar-conta/criar-conta.module#CriarContaPageModule' },
   { path: 'esqueci-senha', loadChildren: './usuarios/esqueci-senha/esqueci-senha.module#EsqueciSenhaPageModule' },
   { path: 'login', loadChildren: './usuarios/login/login.module#LoginPageModule' },
-  { path: 'forma-pagamento', loadChildren: './pedidos/forma-pagamento/forma-pagamento.module#FormaPagamentoPageModule' }
+  { path: 'forma-pagamento', loadChildren: './pedidos/forma-pagamento/forma-pagamento.module#FormaPagamentoPageModule' },
+  { path: 'detalhes-produtos', loadChildren: './produtos/detalhes-produtos/detalhes-produtos.module#DetalhesProdutosPageModule' }
 ];
 @NgModule({
   imports: [

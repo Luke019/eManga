@@ -17,6 +17,10 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'pedidos',
+        loadChildren: '../pedidos/lista-pedido/lista-pedido.module#ListaPedidoPageModule'
+      },
+      {
         path: 'perfil',
         children: [
           {

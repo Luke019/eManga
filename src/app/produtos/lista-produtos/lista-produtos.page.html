@@ -17,9 +17,9 @@
 
     </ion-item>
 
-    <!-- <ion-item *ngFor="let produto of produtos | async" [routerLink]="['/produtos/detalhes-produtos']"> -->
-    <ion-item *ngFor="let produto of produtos | async"> 
-    <!-- <ion-item *ngFor="let produto of produtos | async" (click)="adicionarProduto(produto.key)"> -->
+    <!-- <ion-item *ngFor="let produto of produtos | async" [routerLink]="['/produtos/detalhes-produtos']">
+    <ion-item *ngFor="let produto of produtos | async">  -->
+    <ion-item *ngFor="let produto of produtos | async" (click)="adicionarProduto(produto.key)">
       <ion-avatar slot="start" *ngIf="produto.img">
         <img [src]="produto.img" />
       </ion-avatar>
@@ -30,9 +30,9 @@
         <!-- <span>{{ produto.preco | currency:'BRL' }}</span> -->
         <app-valor [valor]="produto.preco"></app-valor>
       </ion-label>
-      <ion-button expand="block" size="small" [routerLink]="['/detalhes-produtos']">
+      <!-- <ion-button expand="block" size="small" [routerLink]="['/detalhes-produtos']">
         Detalhes
-      </ion-button>
+      </ion-button> -->
     </ion-item>
   </ion-list>
    <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="carrinhoPossuiItens">

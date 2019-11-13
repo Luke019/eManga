@@ -23,6 +23,7 @@ export class FormaPagamentoPage implements OnInit {
     {valor: PedidoService.TIPO_FORMA_PAGAMENTO.CARTAO, descricao: 'Cartão de crédito/débito'}
   ];
   enderecoSelecionado: string = this.MENSAGEM_ENDERECO_VAZIO;
+
   constructor(private formBuilder: FormBuilder,
               private carrinhoService: CarrinhoService,
               private modalCtrl: ModalController,
@@ -54,7 +55,7 @@ export class FormaPagamentoPage implements OnInit {
     this.modalCtrl.create({
       component: ListaEnderecoPage,
       componentProps: {
-        selecionaEndereco: true
+        selecionarEndereco: true
       },
       showBackdrop: true,
       backdropDismiss: true
@@ -76,7 +77,7 @@ export class FormaPagamentoPage implements OnInit {
       this.pedidoService.gerarPedido(this.form.value)
         .then( () => {
           this.toast.show('Pedido salvo com sucesso. Aguarde a confirmação');
-          this.router.navigate(['/tbas/produtos']);
+          this.router.navigate(['/tabs/produtos']);
         })
           .catch( () => {
             this.toast.show('Erro ao salvar o Pedido');

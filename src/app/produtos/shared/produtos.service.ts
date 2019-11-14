@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { FirebasePath } from 'src/app/core/shared/firebase-path.service';
 import { map } from 'rxjs/operators';
+import { FirebasePath } from 'src/app/core/firebase-path';
 
 @Injectable({
   providedIn: 'root'

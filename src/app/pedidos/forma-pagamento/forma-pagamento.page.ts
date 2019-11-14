@@ -1,12 +1,12 @@
+import { ListaEnderecoPage } from 'src/app/enderecos/lista-endereco/lista-endereco.page';
+import { CarrinhoService } from '../shared/carrinho.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { PedidoService } from '../shared/pedido.service';
-import { CarrinhoService } from '../shared/carrinho.service';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ToastService } from 'src/app/core/shared/toast.service';
-import { ListaEnderecoPage } from 'src/app/enderecos/lista-endereco/lista-endereco.page';
 
 @Component({
   selector: 'app-forma-pagamento',

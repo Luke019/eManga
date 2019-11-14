@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { map } from 'rxjs/operators';
-import { FirebasePath } from 'src/app/core/shared/firebase-path.service';
+import { FirebasePath } from 'src/app/core/firebase-path';
+
 
 @Injectable({
   providedIn: 'root'

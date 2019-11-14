@@ -8,6 +8,16 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-button click="adicionarProduto()">Carrinho</ion-button>
+    <ion-item *ngFor="let produto of produtos | async">  
+          <ion-avatar slot="start" *ngIf="produto.img">
+            <img [src]="produto.img" />
+          </ion-avatar>
+          <ion-label text-wrap>
+            <h1>{{ produto.nome }}</h1>
+            <h2>{{ produto.categoriaNome }}</h2>
+            <pre text-wrap>{{ produto.descricao }}</pre>
+            <app-valor [valor]="produto.preco"></app-valor>
+          </ion-label>
+        </ion-item>
+        <ion-button [routerLink]= "['/pedido/carrinho/novo-item/:key']">Carrinho</ion-button>
 </ion-content>

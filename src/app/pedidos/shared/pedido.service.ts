@@ -3,8 +3,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { CarrinhoService } from './carrinho.service';
 import { DatePipe } from '@angular/common';
-import { FirebasePath } from 'src/app/core/shared/firebase-path.service';
 import { map } from 'rxjs/operators';
+import { FirebasePath } from 'src/app/core/firebase-path';
 
 @Injectable({
   providedIn: 'root'
@@ -54,7 +54,7 @@ export class PedidoService {
 
                     this.db.object('/').update(pedidoObj)
                       .then(() => {
-                        this.carrinhoService.clear()
+                        this.carrinhoService.Clear()
                           .then(() => resolve())
                           .catch(() => reject ());
                       })

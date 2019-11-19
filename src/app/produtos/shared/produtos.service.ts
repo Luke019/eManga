@@ -25,6 +25,14 @@ export class ProdutosService {
     );
   }
 
+  getByCustomers(produtos: string) {
+    return this.db.list(FirebasePath.PRODUTOS, q => q.orderByChild('nome').startAt(produtos).endAt(produtos+'\uf88f'))
+      .snapshotChanges().pipe(
+        map(changes => {
+          return changes.map(m => ({ key: m.payload.key, ...m.payload.val() }))
+        })
+      )
+}
   getCategoriasAll() {
     return this.db.list(FirebasePath.CATEGORIAS)
     .snapshotChanges().pipe(

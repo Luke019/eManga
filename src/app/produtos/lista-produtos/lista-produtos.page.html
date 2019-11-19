@@ -1,16 +1,19 @@
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-title>Produtos</ion-title>
+    <ion-title>Emanga</ion-title>
   </ion-toolbar>
+  <ion-toolbar color="dark">
+  <ion-searchbar [(ngModel)]="produto" type="text" placeholder=" Digite sua pesquisa" (keypress)="getProprietario()">
+  </ion-searchbar>
+</ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
     <ion-item>
 
-      <ion-label>Categoria</ion-label>
       <ion-select (ionChange)="buscarProdutos()" [(ngModel)]="categoriaSelecionada">
-        <ion-select-option value="" [selected]="true">Todas</ion-select-option>
+        <ion-select-option value="" [selected]="true">Categoria</ion-select-option>
         <ion-select-option *ngFor="let categoria of categorias | async" [value]="categoria.key">{{ categoria.nome }}
         </ion-select-option>
       </ion-select>

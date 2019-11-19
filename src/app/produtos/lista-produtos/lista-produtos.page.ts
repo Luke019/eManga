@@ -10,7 +10,9 @@ import { CarrinhoService } from 'src/app/pedidos/shared/carrinho.service';
   styleUrls: ['./lista-produtos.page.scss'],
 })
 export class ListaProdutosPage implements OnInit {
+  [x: string]: any;
   produtos: Observable<any[]>;
+  produto: string;
   categorias: Observable<any[]>;
   categoriaSelecionada: string;
   carrinhoPossuiItens: boolean = false;
@@ -40,4 +42,7 @@ export class ListaProdutosPage implements OnInit {
     this.router.navigate(['produto/detalhes-pedidos']);
   }
 
+  getProprietario() {
+    this.produtos = this.produtosService.getByCustomers(this.produto);
+}
 }

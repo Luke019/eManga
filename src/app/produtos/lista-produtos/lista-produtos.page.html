@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>Emanga</ion-title>
+  <ion-toolbar color="darkness">
+    <ion-title color="carmesim">Emanga</ion-title>
   </ion-toolbar>
   <ion-toolbar color="dark">
   <ion-searchbar [(ngModel)]="produto" type="text" placeholder=" Digite sua pesquisa" (keypress)="getProprietario()">
@@ -8,7 +8,7 @@
 </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding >
   <ion-list>
     <ion-item>
 
@@ -39,7 +39,7 @@
     </ion-item>
   </ion-list>
    <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="carrinhoPossuiItens">
-    <ion-fab-button [routerLink]="['/pedido/carrinho']" color="dark">
+    <ion-fab-button [routerLink]="['/pedido/carrinho']" color="darkness">
       <ion-icon name="cart"></ion-icon>
     </ion-fab-button>
   </ion-fab> 

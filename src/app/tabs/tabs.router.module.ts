@@ -16,10 +16,10 @@ const routes: Routes = [
           }
         ]
       },
-      {
-        path: 'pedidos',
-        loadChildren: '../pedidos/lista-pedido/lista-pedido.module#ListaPedidoPageModule'
-      },
+      // {
+      //   path: 'pedidos',
+      //   loadChildren: '../pedidos/lista-pedido/lista-pedido.module#ListaPedidoPageModule'
+      // },
       {
         path: 'perfil',
         children: [
@@ -30,17 +30,17 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'sobre',
+        path: 'home',
         children: [
           {
             path: '',
-            loadChildren: '../sobre/sobre.module#SobrePageModule'
+            loadChildren: '../home/home.module#HomePageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/produtos',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
@@ -94,7 +94,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/produtos',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

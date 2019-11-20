@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -26,7 +27,8 @@ export class PedidoService {
   constructor(private db: AngularFireDatabase,
               private afAuth: AngularFireAuth,
               private carrinhoService: CarrinhoService,
-              private dateFormat: DatePipe) { }
+              private dateFormat: DatePipe,
+              private router: Router) { }
 
               gerarPedido(pedido: any) {
                 return new Promise( (resolve, reject) => {
@@ -134,4 +136,14 @@ export class PedidoService {
                   })
                 );
               }
+
+              // logar() {
+              //   this.afAuth.auth.onAuthStateChanged(user => {
+              //     if (!user) {
+              //       this.router.navigate(['/login']);
+              //     } else {
+              //      this.router.navigate(['/pedido/carrinho']);
+              //     }
+              //   });
+              // }
 }

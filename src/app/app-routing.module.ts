@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'login', loadChildren: './usuarios/login/login.module#LoginPageModule' },
   { path: 'forma-pagamento', loadChildren: './pedidos/forma-pagamento/forma-pagamento.module#FormaPagamentoPageModule' },
   { path: 'detalhes-produtos', loadChildren: './produtos/detalhes-produtos/detalhes-produtos.module#DetalhesProdutosPageModule' },
-  { path: 'lista-pedido', loadChildren: './pedidos/lista-pedido/lista-pedido.module#ListaPedidoPageModule' }
+  { path: 'lista-pedido', loadChildren: './pedidos/lista-pedido/lista-pedido.module#ListaPedidoPageModule' },
+  { path: 'home', loadChildren: './home/home.module#HomePageModule' }
 ];
 @NgModule({
   imports: [

@@ -19,7 +19,8 @@ export class ListaProdutosPage implements OnInit {
 
   constructor(private router: Router,
               private produtosService: ProdutosService,
-              private carrinhoService: CarrinhoService) { }
+              private carrinhoService: CarrinhoService
+              ) { }
 
   ngOnInit() {
     this.produtos = this.produtosService.getAll(null);
@@ -45,4 +46,14 @@ export class ListaProdutosPage implements OnInit {
   getProprietario() {
     this.produtos = this.produtosService.getByCustomers(this.produto);
 }
+
+// logar() {
+//   this.afAuth.auth.onAuthStateChanged(user => {
+//     if (!user) {
+//       this.router.navigate(['/login']);
+//     } else {
+//      this.router.navigate(['/pedido/carrinho']);
+//     }
+//   });
+// }
 }

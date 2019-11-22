@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="darkness">
-    <ion-title>Perfil</ion-title>
+    <ion-title color="carmesim"><b>Perfil</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -21,8 +21,8 @@
   </ion-list>
 
   <!-- <ion-item (click)="updatePicture()">Update Picture</ion-item> -->
-  <ion-button expand="block" color="carmesim" [routerLink]="['/usuarios/lista-pedido']">Pedidos</ion-button> 
-  <ion-button expand="block" color="carmesim" [routerLink]="['/usuarios/enderecos']">Meus Endereços</ion-button> 
-  <ion-button expand="block" color="darkness" (click)="sair()">Sair</ion-button> 
+  <ion-button expand="block" color="darkness" [routerLink]="['/usuarios/lista-pedido']"><b class="pedidoscor">Meus pedidos</b></ion-button> 
+  <ion-button expand="block" color="darkness" [routerLink]="['/usuarios/enderecos']"><b class="enderecoscor">Meus endereços</b></ion-button> 
+  <ion-button expand="block" color="carmesim" (click)="sair()"><b class="saircor">Sair</b></ion-button> 
 
 </ion-content>

@@ -43,7 +43,7 @@ export class ListaProdutosPage implements OnInit {
     this.router.navigate(['produto/detalhes-pedidos']);
   }
 
-  getProprietario() {
+  getNome() {
     this.produtos = this.produtosService.getByCustomers(this.produto);
 }
 

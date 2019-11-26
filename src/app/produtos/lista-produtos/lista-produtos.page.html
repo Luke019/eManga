@@ -3,15 +3,14 @@
     <ion-title color="carmesim"><b>eManga</b></ion-title>
   </ion-toolbar>
   <ion-toolbar color="dark">
-  <ion-searchbar [(ngModel)]="produto" type="text" placeholder=" Digite sua pesquisa" (keypress)="getProprietario()">
+  <ion-searchbar [(ngModel)]="produto" type="text" placeholder=" Digite sua pesquisa" (keypress)="getNome()">
   </ion-searchbar>
 </ion-toolbar>
 </ion-header>
 
-<ion-content padding >
+<ion-content padding>
   <ion-list>
     <ion-item>
-
       <ion-select (ionChange)="buscarProdutos()" [(ngModel)]="categoriaSelecionada">
         <ion-select-option value="" [selected]="true">Categoria</ion-select-option>
         <ion-select-option *ngFor="let categoria of categorias | async" [value]="categoria.key">{{ categoria.nome }}
@@ -20,22 +19,14 @@
 
     </ion-item>
 
-    <!-- <ion-item *ngFor="let produto of produtos | async" [routerLink]="['/produtos/detalhes-produtos']"> -->
-    <!-- <ion-item *ngFor="let produto of produtos | async">   -->
     <ion-item *ngFor="let produto of produtos | async" (click)="adicionarProduto(produto.key)">
-      <!-- <ion-avatar slot="start" *ngIf="produto.img"> -->
         <img [src]="produto.img" slot="start" *ngIf="produto.img" class="imagem"/>
-      <!-- </ion-avatar> -->
       <ion-label text-wrap>
         <h1>{{ produto.nome }}</h1>
         <h2>{{ produto.categoriaNome }}</h2>
         <pre text-wrap>{{ produto.descricao }}</pre>
-        <!-- <span>{{ produto.preco | currency:'BRL' }}</span> -->
         <app-valor [valor]="produto.preco"></app-valor>
       </ion-label>
-      <!-- <ion-button expand="block" size="small" [routerLink]="['/detalhes-produtos']">
-        Detalhes
-      </ion-button> -->
     </ion-item>
   </ion-list>
    <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="carrinhoPossuiItens">

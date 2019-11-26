@@ -16,10 +16,6 @@ const routes: Routes = [
           }
         ]
       },
-      // {
-      //   path: 'pedidos',
-      //   loadChildren: '../pedidos/lista-pedido/lista-pedido.module#ListaPedidoPageModule'
-      // },
       {
         path: 'perfil',
         children: [
@@ -30,17 +26,17 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'home',
+        path: 'home-produtos',
         children: [
           {
             path: '',
-            loadChildren: '../home/home.module#HomePageModule'
+            loadChildren: '../home/home-produtos/home-produtos.module#HomeProdutosPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: '/tabs/home-produtos',
         pathMatch: 'full'
       }
     ]
@@ -63,6 +59,10 @@ const routes: Routes = [
       {
         path: 'lista-pedido',
         loadChildren: '../pedidos/lista-pedido/lista-pedido.module#ListaPedidoPageModule'
+      },
+      {
+        path: 'sobre',
+        loadChildren: '../sobre/sobre-usuarios/sobre-usuarios.module#SobreUsuariosPageModule'
       }
     ]
   },
@@ -94,7 +94,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: '/tabs/home-produtos',
     pathMatch: 'full'
   }
 ];

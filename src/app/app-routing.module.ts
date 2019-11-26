@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'forma-pagamento', loadChildren: './pedidos/forma-pagamento/forma-pagamento.module#FormaPagamentoPageModule' },
   { path: 'detalhes-produtos', loadChildren: './produtos/detalhes-produtos/detalhes-produtos.module#DetalhesProdutosPageModule' },
   { path: 'lista-pedido', loadChildren: './pedidos/lista-pedido/lista-pedido.module#ListaPedidoPageModule' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' }
+  { path: 'sobre-usuarios', loadChildren: './sobre/sobre-usuarios/sobre-usuarios.module#SobreUsuariosPageModule' },
 ];
 @NgModule({
   imports: [

@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SobrePage } from './sobre.page';
-import { SharedModule } from '../core/shared/shared/shared.module';
+import { IonicModule } from '@ionic/angular';
+
+import { SobreUsuariosPage } from './sobre-usuarios.page';
+import { SharedModule } from 'src/app/core/shared/shared/shared.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: SobrePage
+    component: SobreUsuariosPage
   }
 ];
 
@@ -20,6 +22,6 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SobrePage]
+  declarations: [SobreUsuariosPage]
 })
-export class SobrePageModule {}
+export class SobreUsuariosPageModule {}

@@ -10,17 +10,17 @@
     <img src="../../assets/dclogo.PNG">
   <!-- </ion-avatar> -->
  </div>
-
-  <ion-list>
-    <ion-item>
-      <ion-label>{{ user.name}}</ion-label>
-    </ion-item>
-    <ion-item>
+  <!-- <ion-list> -->
+    <!-- <ion-item> -->
+      <section text-center><b><h2>Bem vindo, {{user.name}}</h2></b></section>
+    <!-- </ion-item> -->
+    <!-- <ion-item>
       <ion-label>{{ user.email }}</ion-label>
-    </ion-item>
-  </ion-list>
+    </ion-item> -->
+  <!-- </ion-list> -->
 
   <!-- <ion-item (click)="updatePicture()">Update Picture</ion-item> -->
+  <ion-button expand="block" color="darkness" [routerLink]="['/usuarios/sobre']"><b class="sobrecor">Sobre</b></ion-button> 
   <ion-button expand="block" color="darkness" [routerLink]="['/usuarios/lista-pedido']"><b class="pedidoscor">Meus pedidos</b></ion-button> 
   <ion-button expand="block" color="darkness" [routerLink]="['/usuarios/enderecos']"><b class="enderecoscor">Meus endereços</b></ion-button> 
   <ion-button expand="block" color="carmesim" (click)="sair()"><b class="saircor">Sair</b></ion-button> 

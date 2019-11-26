@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar color="darkness">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+      <ion-title color="carmesim"><b>Sobre</b></ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content padding>
+  <form [formGroup]="formUsuarios" (ngSubmit)="onSubmit()">
+    <ion-item>
+        <ion-label position="stacked">Nome</ion-label>
+        <ion-input type="text" ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">E-mail</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="stacked">Senha</ion-label>
+        <ion-input type="password" formControlName="senha"></ion-input>
+      </ion-item>
+  
+      <div margin-vertical>
+        <ion-button color="darkness" expand="block" type="submit">Criar conta</ion-button>
+      </div>
+  </form>
+<ion-button>Salvar</ion-button>
+</ion-content>

@@ -12,6 +12,7 @@
     <ion-item *ngFor="let item of itensPedido | async">
       <ion-label text-wrap>
         <h1>{{ item.produtoNome }}</h1>
+        <img [src]="item.img" slot="start" *ngIf="item.img" class="imagem"/>
         <pre *ngIf="item.produtoDescricao" text-wrap>{{ item.produtoDescricao }}</pre>
         <pre *ngIf="item.observacao" text-wrap>{{ item.observacao }}</pre>
         <p>Preço: <app-valor [valor]="item.produtoPreco"></app-valor></p>

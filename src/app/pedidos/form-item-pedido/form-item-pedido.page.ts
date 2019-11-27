@@ -14,6 +14,7 @@ export class FormItemPedidoPage implements OnInit {
   produto: any = {};
   form: FormGroup;
   total: number = 0;
+  produtoImg: string;
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
               private router: Router, private produtosService: ProdutosService,
@@ -27,8 +28,10 @@ export class FormItemPedidoPage implements OnInit {
       const subscribe = this.produtosService.getByKey(key).subscribe( (produto: any) => {
         subscribe.unsubscribe();
         this.produto = produto;
+        this.produtoImg = produto.img;
 
         this.form.patchValue({
+          img: produto.img,
           produtoKey: produto.key,
           produtoNome: produto.nome,
           produtoDescricao: produto.descricao,
@@ -48,7 +51,8 @@ export class FormItemPedidoPage implements OnInit {
     produtoPreco: [''],
     quantidade: [''],
     observacao: [''],
-    total: ['']
+    total: [''],
+    img: ['']
     });
   }
 

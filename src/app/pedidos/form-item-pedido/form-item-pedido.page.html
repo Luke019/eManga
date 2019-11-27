@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding>
+<img [src] = "produto.img">
   <h1>{{ produto.nome }}</h1>
   <pre text-wrap>{{ produto.descricao }}</pre>
   <app-valor [valor]="produto.preco"></app-valor>
@@ -23,12 +24,12 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-button expand="block" color="carmesim" (click)="adicionarQuantidade()">
+            <ion-button expand="block" color="darkness" (click)="adicionarQuantidade()">
               <ion-icon name="add"></ion-icon>
             </ion-button>
           </ion-col>
           <ion-col>
-            <ion-button expand="block" color="carmesim" (click)="removerQuantidade()">
+            <ion-button expand="block" color="darkness" (click)="removerQuantidade()">
               <ion-icon name="remove"></ion-icon>
             </ion-button>
           </ion-col>

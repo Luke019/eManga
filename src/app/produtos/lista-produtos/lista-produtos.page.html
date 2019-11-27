@@ -12,7 +12,7 @@
   <ion-list>
     <ion-item>
       <ion-select (ionChange)="buscarProdutos()" [(ngModel)]="categoriaSelecionada">
-        <ion-select-option value="" [selected]="true">Categoria</ion-select-option>
+        <ion-select-option value="" [selected]="true">Todos</ion-select-option>
         <ion-select-option *ngFor="let categoria of categorias | async" [value]="categoria.key">{{ categoria.nome }}
         </ion-select-option>
       </ion-select>

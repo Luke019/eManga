@@ -62,7 +62,7 @@ const routes: Routes = [
       },
       {
         path: 'sobre',
-        loadChildren: '../sobre/sobre-usuarios/sobre-usuarios.module#SobreUsuariosPageModule'
+        loadChildren: '../usuarios/sobre-usuarios/sobre-usuarios.module#SobreUsuariosPageModule'
       }
     ]
   },

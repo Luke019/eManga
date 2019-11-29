@@ -61,7 +61,7 @@ const routes: Routes = [
         loadChildren: '../pedidos/lista-pedido/lista-pedido.module#ListaPedidoPageModule'
       },
       {
-        path: 'sobre',
+        path: 'sobre-usuarios',
         loadChildren: '../usuarios/sobre-usuarios/sobre-usuarios.module#SobreUsuariosPageModule'
       }
     ]

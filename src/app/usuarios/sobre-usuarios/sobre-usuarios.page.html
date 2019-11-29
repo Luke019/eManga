@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color="darkness">
       <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
@@ -7,24 +7,18 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-<!-- <form [formGroup]="formUsuarios" (ngSubmit)="onSubmit()"> -->
+<form [formGroup]="formUsuarios" *ngFor="let usuario of usuarios | async">
   <ion-item>
       <ion-label position="stacked">Nome</ion-label>
-      <ion-input type="text" ></ion-input>
+      <ion-input type="text" formControlName="nome"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label position="stacked">E-mail</ion-label>
-      <!-- <ion-input type="email" formControlName="email"></ion-input> -->
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Senha</ion-label>
-      <!-- <ion-input type="password" formControlName="senha"></ion-input> -->
+      <ion-input type="email" formControlName="email"></ion-input>
     </ion-item>
 
     <div margin-vertical>
-      <ion-button color="darkness" expand="block" type="submit">Salvar</ion-button>
+      <ion-button color="darkness" expand="block" [routerLink]="['/usuarios/editar', usuario.key">Editar</ion-button>
     </div>
-<!-- </form> -->
-<ion-button>Salvar</ion-button>
-</ion-content>
+</form>
+</ion-content> -->

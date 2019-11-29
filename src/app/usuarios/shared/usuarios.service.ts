@@ -1,12 +1,26 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { FirebasePath } from 'src/app/core/firebase-path';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(private afAuth: AngularFireAuth,
+              private db: AngularFireDatabase,
+              ) { }
+
+  getUsuarioPath() {
+    const path = `${FirebasePath.USUARIOS}${this.afAuth.auth.currentUser.uid}`;
+    return path;
+    }
+
+  getUsuarioRef() {
+    const path = this.getUsuarioPath();
+    return this.db.list(path);
+  }
 
   criarConta(usuario: any) {
     return new Promise((resolve, reject) => {
@@ -39,6 +53,24 @@ export class UsuariosService {
         });
     });
   }
+
+  update(usuario: any, key: string) {
+    return this.save(usuario, key);
+  }
+  private save(usuario: any, key: string) {
+    // tslint:disable-next-line: no-shadowed-variable
+    return new Promise( ( resolve, reject) => {
+      const usuarioRef = this.getUsuarioRef();
+      if (key) {
+        usuarioRef.update(key, usuario)
+          .then( () => resolve(key) )
+          .catch( () => reject());
+      } else {
+        usuarioRef.push(usuario)
+          .then( (result: any) => resolve(result.key) );
+    }
+  });
+}
 
   enviarEmailResetarSenha(email: string) {
     return new Promise((resolve, reject) => {

@@ -8,6 +8,15 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        path: 'home-produtos',
+        children: [
+          {
+            path: '',
+            loadChildren: '../home/home-produtos/home-produtos.module#HomeProdutosPageModule'
+          }
+        ]
+      },
+      {
         path: 'produtos',
         children: [
           {
@@ -22,15 +31,6 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../usuarios/perfil/perfil.module#PerfilPageModule'
-          }
-        ]
-      },
-      {
-        path: 'home-produtos',
-        children: [
-          {
-            path: '',
-            loadChildren: '../home/home-produtos/home-produtos.module#HomeProdutosPageModule'
           }
         ]
       },

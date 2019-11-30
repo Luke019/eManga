@@ -12,10 +12,10 @@ export class HomeService {
 
   getAll() {
     return this.db.list(FirebasePath.PRODUTOS, q => {
-      return q.orderByChild('produtosDestaque').equalTo('sim');
+      return q.orderByChild('produtoDestaque').equalTo('sim');
     }).snapshotChanges().pipe(
       map(changes => {
-        return changes.map(m => ({key: m.payload.key, ...matchMedia.payload.val() }));
+        return changes.map(m => ({key: m.payload.key, ...m.payload.val() }));
       })
     );
   }

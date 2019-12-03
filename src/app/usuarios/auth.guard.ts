@@ -1,16 +1,13 @@
+import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { take, map, tap } from 'rxjs/operators';
-import { UsuariosService } from './shared/usuarios.service';
+import { CanActivate, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
 
-  constructor( private authService: UsuariosService,
+  constructor( private authService: AuthService,
                private router: Router ) { }
 
     canActivate(): Promise<boolean> {

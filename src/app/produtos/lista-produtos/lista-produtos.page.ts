@@ -38,22 +38,8 @@ export class ListaProdutosPage implements OnInit {
     this.router.navigate(['pedido/carrinho/novo-item/', produtoKey]);
   }
 
-  mostrarDetalhes() {
-    // console.log('Acontece algo');
-    this.router.navigate(['produto/detalhes-pedidos']);
-  }
-
   getNome() {
     this.produtos = this.produtosService.getByCustomers(this.produto);
 }
 
-// logar() {
-//   this.afAuth.auth.onAuthStateChanged(user => {
-//     if (!user) {
-//       this.router.navigate(['/login']);
-//     } else {
-//      this.router.navigate(['/pedido/carrinho']);
-//     }
-//   });
-// }
 }

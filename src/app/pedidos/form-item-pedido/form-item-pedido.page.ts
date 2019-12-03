@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastService } from 'src/app/core/shared/toast.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-form-item-pedido',
@@ -16,10 +17,13 @@ export class FormItemPedidoPage implements OnInit {
   total: number = 0;
   produtoImg: string;
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
-              private router: Router, private produtosService: ProdutosService,
+  constructor(private formBuilder: FormBuilder,
+              private route: ActivatedRoute,
+              private router: Router,
+              private produtosService: ProdutosService,
               private carrinhoService: CarrinhoService,
-              private toast: ToastService ) { }
+              private toast: ToastService,
+              private afAuth: AngularFireAuth ) { }
 
   ngOnInit() {
     this.criarFormulario();
@@ -70,7 +74,7 @@ export class FormItemPedidoPage implements OnInit {
     let qtd = this.form.value.quantidade;
     qtd--;
     if(qtd <=0)
-      qtd = 1;
+    qtd = 1;
 
     this.atualizaTotal(qtd);
   }
@@ -81,12 +85,21 @@ export class FormItemPedidoPage implements OnInit {
   }
 
   onSubmit() {
-    if (this.form.valid) {
-      this.carrinhoService.insert(this.form.value)
-      .then( () => {
-        this.toast.show('Produto adicionado com sucesso');
-        this.router.navigate(['/tabs/produtos']);
-      });
-    }
+    this.afAuth.auth.onAuthStateChanged(user => {
+      if (!user) {
+        this.toast.show('Necessario efetuar Login ou Criar uma conta');
+        this.router.navigate(['/login']);
+      } else {
+          if  (this.form.valid) {
+            this.carrinhoService.insert(this.form.value)
+            .then( () => {
+              this.toast.show('Produto adicionado com sucesso');
+              this.router.navigate(['/tabs/produtos']);
+            });
+          }
+      }
+    });
   }
 }
+
+

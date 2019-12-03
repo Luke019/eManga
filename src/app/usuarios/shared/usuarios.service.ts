@@ -97,9 +97,9 @@ export class UsuariosService {
     return user;
   }
 
-  getAuth() {
-    return this.afAuth.auth;
-  }
+  // getAuth() {
+  //   return this.afAuth.auth;
+  // }
 
     handlerError(error: any) {
       let mensagem = '';

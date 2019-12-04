@@ -8,20 +8,20 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'produtos',
-        children: [
-          {
-            path: '',
-            loadChildren: '../produtos/lista-produtos/lista-produtos.module#ListaProdutosPageModule'
-          }
-        ]
-      },
-      {
         path: 'home-produtos',
         children: [
           {
             path: '',
             loadChildren: '../home/home-produtos/home-produtos.module#HomeProdutosPageModule'
+          }
+        ]
+      },
+      {
+        path: 'produtos',
+        children: [
+          {
+            path: '',
+            loadChildren: '../produtos/lista-produtos/lista-produtos.module#ListaProdutosPageModule'
           }
         ]
       },
@@ -36,7 +36,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/produtos',
+        redirectTo: '/tabs/home-produtos',
         pathMatch: 'full'
       }
     ]
@@ -94,7 +94,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/produtos',
+    redirectTo: '/tabs/home-produtos',
     pathMatch: 'full'
   }
 ];

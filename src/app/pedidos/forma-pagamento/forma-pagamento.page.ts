@@ -14,7 +14,7 @@ import { ToastService } from 'src/app/core/shared/toast.service';
   styleUrls: ['./forma-pagamento.page.scss'],
 })
 export class FormaPagamentoPage implements OnInit {
-  MENSAGEM_ENDERECO_VAZIO: string = 'Ta faltando o endereço vei';
+  MENSAGEM_ENDERECO_VAZIO: string = 'Escolha o endereço de entrega';
   form: FormGroup;
   produtos: Observable<any[]>;
   total: number = 0;

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -60,7 +60,7 @@
                   {{ enderecoSelecionado }}
                 </ion-col>
                 <ion-col size="3" text-right>
-                  <ion-button fill="clear" color="secondary" (click)="selecionarEndereco()">Escolher</ion-button>
+                  <ion-button fill="clear" color="carmesim" (click)="selecionarEndereco()">Escolher</ion-button>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -96,7 +96,7 @@
 
     <div margin-vertical>
       <p padding-horizontal text-right><b>Total do pedido: </b><app-valor [valor]="total"></app-valor></p>
-      <ion-button expand="block" size="large" type="submit">
+      <ion-button expand="block" size="large" type="submit" color="darkness">
         Realizar pedido
         <ion-icon slot="end" name="arrow-forward"></ion-icon>
       </ion-button>

@@ -25,7 +25,11 @@
            </ion-card-header>     
          </ion-card>
      </ion-col>   
-     
  </ion-row>
 </ion-grid>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="carrinhoPossuiItens">
+  <ion-fab-button [routerLink]="['/pedido/carrinho']" color="darkness">
+  <ion-icon name="cart" class="vermelhocor"></ion-icon>
+</ion-fab-button>
+</ion-fab>
 </ion-content>

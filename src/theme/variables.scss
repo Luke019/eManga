@@ -147,3 +147,40 @@
     --ion-color-tint: var(--ion-color-brancao-tint);
   }
   
+  :root {
+    --ion-color-vinho: #d20000;
+    --ion-color-vinho-rgb: 210,0,0;
+    --ion-color-vinho-contrast: #ffffff;
+    --ion-color-vinho-contrast-rgb: 255,255,255;
+    --ion-color-vinho-shade: #b90000;
+    --ion-color-vinho-tint: #d71a1a;
+  }
+  
+  .ion-color-vinho {
+    --ion-color-base: var(--ion-color-vinho);
+    --ion-color-base-rgb: var(--ion-color-vinho-rgb);
+    --ion-color-contrast: var(--ion-color-vinho-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-vinho-contrast-rgb);
+    --ion-color-shade: var(--ion-color-vinho-shade);
+    --ion-color-tint: var(--ion-color-vinho-tint);
+  }
+
+  :root {
+    --ion-color-lima: #00ff00;
+    --ion-color-lima-rgb: 0,255,0;
+    --ion-color-lima-contrast: #000000;
+    --ion-color-lima-contrast-rgb: 0,0,0;
+    --ion-color-lima-shade: #00e000;
+    --ion-color-lima-tint: #1aff1a;
+  }
+  
+  .ion-color-lima {
+    --ion-color-base: var(--ion-color-lima);
+    --ion-color-base-rgb: var(--ion-color-lima-rgb);
+    --ion-color-contrast: var(--ion-color-lima-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-lima-contrast-rgb);
+    --ion-color-shade: var(--ion-color-lima-shade);
+    --ion-color-tint: var(--ion-color-lima-tint);
+  }
+  
+  

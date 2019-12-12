@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding color="dark">
 <img [src] = "produto.img">
   <h1>{{ produto.nome }}</h1>
   <pre text-wrap>{{ produto.descricao }}</pre>
@@ -15,12 +15,12 @@
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-    <ion-item>
+    <ion-item color="dark">
       <ion-label position="stacked">Quantidade</ion-label>
       <ion-input type="number" min="0" step="1" formControlName="quantidade" (ionChange)="executaCalcularTotal()"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item color="dark">
       <ion-grid>
         <ion-row>
           <ion-col>
@@ -42,7 +42,7 @@
       <ion-textarea formControlName="observacao"></ion-textarea>
     </ion-item> -->
 
-    <ion-item text-end>
+    <ion-item text-end color="dark">
       <ion-label>
         <h2>Total: <app-valor [valor]="total"></app-valor></h2>
       </ion-label>

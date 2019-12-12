@@ -7,10 +7,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let item of itensPedido | async">
-      <ion-label text-wrap>
+<ion-content padding color="dark">
+  <ion-list color="dark">
+    <ion-item *ngFor="let item of itensPedido | async" color="dark">
+      <ion-label text-wrap text-center>
         <h1>{{ item.produtoNome }}</h1>
         <img [src]="item.img" slot="start" *ngIf="item.img" class="imagem"/>
         <pre *ngIf="item.produtoDescricao" text-wrap>{{ item.produtoDescricao }}</pre>
@@ -40,7 +40,7 @@
     </ion-item>
   </ion-list>
 </ion-content>
-<ion-footer>
+<ion-footer class="dark">
   <p padding-horizontal text-right><b>Total do pedido: </b>
     <app-valor [valor]="total"></app-valor>
   </p>

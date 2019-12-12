@@ -1,16 +1,15 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="darkness">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Pagamento</ion-title>
+    <ion-title class="vermelho"><b>Pagamento</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <form [formGroup]="form" (ngSubmit)= "onSubmit()">
     <ion-list>
-       Grupo forma de pagamento 
       <ion-item-group>
         <ion-item-divider color="light">
           <ion-label>
@@ -96,9 +95,10 @@
 
     <div margin-vertical>
       <p padding-horizontal text-right><b>Total do pedido: </b><app-valor [valor]="total"></app-valor></p>
-      <ion-button expand="block" size="large" type="submit" color="darkness">
-        Realizar pedido
-        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      <ion-button expand="block" size="large" type="submit" color="darkness"><b class="vermelho">
+        Realizar Pedido
+        </b>
+        <ion-icon slot="end" name="arrow-forward" class="vermelho"></ion-icon>
       </ion-button>
     </div>
 
